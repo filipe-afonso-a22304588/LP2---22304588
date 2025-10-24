@@ -14,8 +14,8 @@ public class Main {
         coresPossiveis.add("Brown");
         coresPossiveis.add("Purple");
 
-        Jogador teste = new Jogador("123","123","","Orange",15);
-        Jogador teste2 = new Jogador("526","456","Java;C","Green",30);
+        Jogador teste = new Jogador("123","123","","Orange");
+        Jogador teste2 = new Jogador("526","456","Java;C","Green");
 
        // System.out.println(teste.isAtributosInvalido(idJaUtilizados,coresPossiveis));
        // System.out.println(teste2.isAtributosInvalido(idJaUtilizados,coresPossiveis));

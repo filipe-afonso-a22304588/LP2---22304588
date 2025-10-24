@@ -10,17 +10,16 @@ public class Jogador {
     String linguagemFavorita;
     String cor;
     int posicao;
-    int meta;
     String estado;
 
 
-    public Jogador(String id, String nome, String linguagemFavorita, String cor, int meta) {
+    public Jogador(String id, String nome, String linguagemFavorita, String cor) {
         this.id = id;
         this.nome = nome;
         this.linguagemFavorita = formataLinguagens(linguagemFavorita);
         this.cor = cor;
-        this.meta = meta;
         this.posicao = 1;
+        this.estado = "Em Jogo";
     }
 
     String formataLinguagens(String linguagemNaoFormatada){
@@ -35,7 +34,7 @@ public class Jogador {
             for (int i = 0; i < linguagensDiferentes.length; i++) {
                 linguagensFormatadas += linguagensDiferentes[i];
                 if (i != linguagensDiferentes.length - 1 ){
-                    linguagensFormatadas += ";";
+                    linguagensFormatadas += "; ";
                 }
             }
         }
@@ -96,8 +95,9 @@ public class Jogador {
     String getEstado() {
         return this.estado;
     }
-    int getMeta(){
-        return this.meta;
+
+    void removeJogador(){
+        this.estado = "Derrotado";
     }
 
 }

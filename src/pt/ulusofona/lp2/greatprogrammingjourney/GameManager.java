@@ -46,7 +46,7 @@ public class GameManager {
             String linguagemFavorita = jogadores[2];
             String cor = jogadores[3];
 
-            Jogador jogadorTeste = new Jogador(id, nome, linguagemFavorita, cor, worldSize);
+            Jogador jogadorTeste = new Jogador(id, nome, linguagemFavorita, cor);
 
             if (jogadorTeste.isAtributosInvalido(idJaUtilizados, coresPossiveis)) {
                 return false;
@@ -79,7 +79,7 @@ public class GameManager {
         for (Jogador jogador : this.listaJogadores.values()) {
             if (jogador.getId() == id) {
                 resultado = new String[]{String.valueOf(jogador.getId()), jogador.getNome(), jogador.getLinguagemFavorita(),
-                        jogador.getCor(), String.valueOf(jogador.getPosicao())};
+                        jogador.getCor(), String.valueOf(jogador.getPosicao()) };
             }
         }
         return resultado;
@@ -160,6 +160,9 @@ public class GameManager {
     public boolean gameIsOver() {
         for (Jogador jogador : this.listaJogadores.values()) {
             if (jogador.getPosicao() == this.tamanhoTabuleiro) {
+                for (Jogador jogadorEmJogo : listaJogadores.values()) {
+                    jogadorEmJogo.removeJogador();
+                }
                 return true;
             }
         }

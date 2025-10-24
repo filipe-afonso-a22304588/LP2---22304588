@@ -113,7 +113,7 @@ public class GameManager {
         }
 
         for (Jogador jogador : this.listaJogadores.values()) {
-            if (jogador.getPosicao() == position) {
+            if (jogador.getPosicao() == position && jogador.getEstado().equals("Em Jogo")) {
                 if (count == 0) {
                     jogadoresPresentesNaPosicao[0] += jogador.getId();
                     count++;
